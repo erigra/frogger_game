@@ -12,9 +12,7 @@ clock = pygame.time.Clock()
 all_sprites = pygame.sprite.Group()
 
 # create player
-
 player = Player((600,400), all_sprites)
-
 
 # game loop
 while True:
@@ -28,7 +26,11 @@ while True:
 	# delta time 
 	dt = clock.tick() / 1000
 
+	# update
+	all_sprites.update(dt)
+
 	# draw
+	display_surface.fill("black")
 	all_sprites.draw(display_surface)
 
 	# update the display surface -> drawing the frame 
