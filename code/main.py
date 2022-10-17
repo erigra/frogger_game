@@ -35,3 +35,5 @@ while True:
 
 	# update the display surface -> drawing the frame 
 	pygame.display.update()
+
+	
