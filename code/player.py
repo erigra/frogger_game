@@ -31,8 +31,6 @@ class Player(pygame.sprite.Sprite):
                     self.animations[key].append(surf)
         print(self.animations)
                 
-
-
     def move(self,dt):
         # normalize a vector if not 0
         if self.direction.magnitude() != 0:
