@@ -10,6 +10,7 @@ class Car(pygame.sprite.Sprite):
             car_name = random.choice(carlist) 
         self.image = pygame.image.load("../graphics/cars/"+car_name).convert_alpha()        
         self.rect = self.image.get_rect(center = pos)
+        
         # float based movement
         self.pos = pygame.math.Vector2(self.rect.center)
         
@@ -19,13 +20,12 @@ class Car(pygame.sprite.Sprite):
             self.direction = pygame.math.Vector2(-1,0)
             self.image = pygame.transform.flip(self.image, True, False)
 
-
-
-        
-        
-        self.speed = 300
+        self.speed = 400
 
     def update(self, dt):
          self.pos += self.direction * self.speed *dt
          self.rect.center = (round(self.pos.x), round(self.pos.y))
+
+         if not -200 < self.pos.x < 3400:
+            self.kill()
         
